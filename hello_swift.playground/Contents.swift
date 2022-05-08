@@ -116,3 +116,90 @@ enum MediaType {
 
 var mp3: MediaType = .audio("mp3")
 var h264: MediaType = .video("h264")
+
+//조건문, 반복문
+//조건을 검사할 때, if, switch 를 사용
+
+//if 을 이용한 조건 검사
+let age = 10
+
+// if 문의 조건절에는 boolean 타입을 사용합니다.
+// 예) age > 20
+if age > 20 {
+    print("성인 입니다")
+} else {
+    print("미성년 입니다")
+}
+
+// else-if 조건을 이용해서, 조건을 세분화 해보겠습니다.
+if age >= 10 && age < 20 {
+    print("10대 입니다")
+} else if age >= 20 && age < 30 {
+    print("20대 입니다")
+} else if age >= 30 && age < 40 {
+    print("30대 입니다")
+} else if age >= 40 && age < 50 {
+    print("40대 입니다")
+} else {
+    print("......")
+}
+
+//switch 를 이용한 조건 검사
+enum Weather {
+    case sun
+    case cloud
+    case rain
+}
+
+var weather: Weather = .sun
+
+switch weather {
+case .sun:
+    print("맑아요")
+case .cloud:
+    print("흐려요")
+case .rain:
+    print("비와요")
+}
+
+//반복되는 연산을 할때는 for, while 을 사용
+//배열과 딕셔너리의 아이템을 순차적으로 체크할때 아래처럼 사용 가능합니다.
+let ages = [3, 20, 60]
+let languageCode = [
+    "한국" : "ko",
+    "미국" : "en",
+    "일본" : "ja",
+]
+
+for age in ages {
+    print("age: \(age)")
+}
+//    age: 3
+//    age: 20
+//    age: 60
+
+for (key, value) in languageCode {
+    print("\(key)의 언어코드는 \(value)")
+}
+//    한국의 언어코드는 ko
+//    미국의 언어코드는 en
+//    일본의 언어코드는 ja
+
+//일정 횟수를 단순 반복하고 싶은 경우에는 아래와 같이 사용할수 있습니다.
+print("전방에 다짐 10번 발사~~!")
+
+for _ in 0..<10 {
+    print("나는 iOS 개발자다!")
+}
+
+//특정 조건을 이용해서 반복하는 경우에는 while 반복문 이용
+var count = 10
+
+print("Ready!")
+
+while count > 0 {
+    print("\(count)...")
+    count -= 1
+}
+
+print("START!")
