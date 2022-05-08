@@ -203,3 +203,28 @@ while count > 0 {
 }
 
 print("START!")
+
+//옵셔널
+//값이 있을수도 있고, 없을수도 있음을 표현
+
+//값이 있을수도, 있고 없을수도 있는 경우...
+// Dictionary (Key: Value)
+let languageCode = [
+    "한국" : "ko",
+    "미국" : "en",
+    "일본" : "ja",
+]
+
+let krCode = languageCode["한국"] // "ko"
+let jpCode = languageCode["일본"] // "ja"
+let deCode = languageCode["독일"] // nil
+
+//값이 있을수도, 없을수도 있는 경우 → Optional 로 표현
+//? 을 이용해서 표현
+//위에 사례에서, krCode, jpCode, deCode 모두 타입을 살펴보면 타입 + ? 으로 표현된것을 확인할수 있음
+
+// 이름이 있을수도 있고 없을수 있는 타입 선언 => String?
+var name: String? = nil
+
+name = "Jason"
+name = nil
