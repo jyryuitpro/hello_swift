@@ -81,3 +81,38 @@ let code = languageCode["한국"] // "ko"
 //비어 있는 배열과 딕셔너리는 이렇게 초기화합니다.
 var emptyArr: [Int] = []
 var emptyDic: [String: Any] = [:]
+
+//enum
+//서로 관계있는 값들을 모아서 표현한것이 바로 enum 입니다.
+//특정 타입들을 표시할때 사용하기 좋습니다.
+// 요일을 한번 enum으로 만들어 보겠습니다.
+enum WeekDay {
+    case mon
+    case tue
+    case wed
+    case thu
+    case fri
+}
+
+var today: WeekDay = .mon
+
+
+// 미디어타입을 한번 enum으로 만들어 보겠습니다.
+enum MediaType {
+    case audio
+    case video
+}
+
+var mediaType: MediaType = .audio
+
+//연관값(associated value)을 가지고 있는 형태로 표현도 가능합니다.
+// 위에서 만들어본 미디어 타입에,
+// 파일 확장자도 문자열로 받을수 있게 수정해보겠습니다.
+
+enum MediaType {
+    case audio(String)
+    case video(String)
+}
+
+var mp3: MediaType = .audio("mp3")
+var h264: MediaType = .video("h264")
